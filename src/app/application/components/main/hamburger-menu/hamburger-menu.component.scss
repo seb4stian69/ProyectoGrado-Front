@@ -1,0 +1,78 @@
+@import "../../../../utils/styles/colors.scss";
+
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu-btn {
+
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 999;
+    margin-top: 3em;
+    margin-left: 1em;
+
+    & div{
+        width: 30px;
+        height: 3px;
+        background: $grey;
+        margin: 5px;
+    }
+
+}
+
+.menu {
+
+    & .cecarlogo{
+        margin-top: -1em;
+        margin-left: 6em;
+    }
+
+    position: fixed;
+    top: 0;
+    left: -20%;
+    width: 20%;
+    height: 100%;
+    background: $green;
+    padding-top: 80px;
+    transition: left 0.7s ease;
+    z-index: 0;
+
+    & ul{
+
+        margin-top: 3em;
+        list-style: none;
+        padding: 0;
+
+        & li{
+
+            padding: 18px 20px;
+
+            & img{
+                margin-left: 1.2em;
+                margin-right: 1.7em;
+            }
+
+            & a{
+                text-decoration: none;
+                color: $white;
+            }
+
+            &:hover{
+                background-color: $greenOpaque;
+                cursor: pointer;
+                transition: background-color 0.7s ease;
+            }
+
+        }
+
+    }
+
+    &.open{
+        left: 0;
+    }
+
+}
