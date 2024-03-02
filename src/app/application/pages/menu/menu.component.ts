@@ -14,4 +14,11 @@ import { HamburgerMenuComponent } from '../../components/main/hamburger-menu/ham
 })
 export class MenuComponent {
 
+  toggleMenu() {
+
+    const div:HTMLElement = document.querySelector('.cardGrid')!;
+    div.classList.toggle('original');
+    
+  }
+
 }
