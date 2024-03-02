@@ -1,6 +1,6 @@
 // First level importation
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 // Second level importation
@@ -17,6 +17,8 @@ import { Router } from '@angular/router';
 export class HamburgerMenuComponent implements OnInit{
 
   router: Router = inject(Router);
+
+  @Output() openCloseEventEmitter = new EventEmitter<boolean>();
 
   indexListMenu: any[] = [
     {
@@ -62,9 +64,15 @@ export class HamburgerMenuComponent implements OnInit{
     const menuBtns:NodeListOf<HTMLElement> = document.querySelectorAll('.btn-line');
 
     menuBtns.forEach( btn => {
-      menu.classList.contains('open') ?
+    
+      const booleanValue: boolean = menu.classList.contains('open');
+      
+      booleanValue?
       btn.style.backgroundColor = '#FFFFFF':
       btn.style.backgroundColor = '#333';
+
+      this.openCloseEventEmitter.emit(booleanValue)
+    
     });
     
   }
