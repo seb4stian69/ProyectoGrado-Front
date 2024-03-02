@@ -1,35 +1,27 @@
 <div class="menu-btn" (click)="toggleMenu()">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
 </div>
 
 <nav class="menu">
 
-    <img class="cecarlogo" src="{{imgAssetsPath}}/LogoCecar.png">
+  <img class="cecarlogo" src="{{imgAssetsPath}}/LogoCecar.png">
 
-    <ul>
-        <li (click)="setActive(0)" [ngStyle]="{'background-color': activeIndex === 0 ? activeBackgroundColor : ''}">
-          <img src="{{imgAssetsPath}}/menuLogo.png">
-          <a>Menu</a>
-        </li>
-        <li (click)="setActive(1)" [ngStyle]="{'background-color': activeIndex === 1 ? activeBackgroundColor : ''}">
-          <img src="{{imgAssetsPath}}/informacionPersonalLogo.png">
-          <a>Informacion personal</a>
-        </li>
-        <li (click)="setActive(2)" [ngStyle]="{'background-color': activeIndex === 2 ? activeBackgroundColor : ''}">
-          <img src="{{imgAssetsPath}}/testEnProcesoLogo.png">
-          <a>Test en proceso</a>
-        </li>
-        <li (click)="setActive(3)" [ngStyle]="{'background-color': activeIndex === 3 ? activeBackgroundColor : ''}">
-          <img src="{{imgAssetsPath}}/notificacionesLogo.png">
-          <a>Notificaciones</a>
-        </li>
-        <li (click)="setActive(4)" [ngStyle]="{'background-color': activeIndex === 4 ? activeBackgroundColor : ''}">
-          <img src="{{imgAssetsPath}}/cerrarSesionLogo.png">
-          <a>Cerrar sesion</a>
-        </li>
-      </ul>
-      
-      
+  <ul>
+
+    @for (li of indexListMenu; track li.index) {
+
+      <li (click)="setActive(li.index)"
+        [ngStyle]="{'background-color': activeIndex === li.index ? activeBackgroundColor : ''}">
+        <img src="{{imgAssetsPath}}/{{li.imgSrc}}.png">
+        <a>{{li.tagName}}</a>
+      </li>
+
+    } @empty {
+      <li>Empty list of menu data</li>
+    }
+
+  </ul>
+
 </nav>

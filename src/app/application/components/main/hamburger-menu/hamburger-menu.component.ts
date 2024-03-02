@@ -18,6 +18,34 @@ export class HamburgerMenuComponent implements OnInit{
 
   router: Router = inject(Router);
 
+  indexListMenu: any[] = [
+    {
+      index: 0,
+      tagName: "Menu",
+      imgSrc: "menuLogo"
+    },
+    {
+      index: 1,
+      tagName: "Informacion personal",
+      imgSrc: "informacionPersonalLogo"
+    },
+    {
+      index: 2,
+      tagName: "Test en proceso",
+      imgSrc: "testEnProcesoLogo"
+    },
+    {
+      index: 3,
+      tagName: "Notificaciones",
+      imgSrc: "notificacionesLogo"
+    },
+    {
+      index: 4,
+      tagName: "Cerrar sesion",
+      imgSrc: "cerrarSesionLogo"
+    }
+  ]
+
   imgAssetsPath:string = "../../../../../assets/images";
   activeIndex: number = -1;
   activeBackgroundColor: string = '#126052';
