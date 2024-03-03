@@ -1,8 +1,8 @@
 <div class="testCard">
-    <p class="titleMsg">Test de pensamiento critico</p>
-    <img src="{{imgAssetsPath}}/ImgTest.png">
+    <p class="titleMsg">{{cardData.title}}</p>
+    <img src="{{imgAssetsPath}}/{{cardData.srcImg}}">
     <div>
-        <p>Cuestionario de Reflexion Critica</p>
-        <button></button>
+        <p>{{cardData.secondTitle}}</p>
+        <button (click)="goToTest(cardData.testID)"></button>
     </div>
 </div>

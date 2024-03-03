@@ -7,8 +7,9 @@
     position: relative;
 
     & img{
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
     & .titleMsg{
@@ -48,11 +49,11 @@
             border-radius: 50%;
             background-position: center;
             border: none;
-            margin-left: 85%;
+            margin-left: 88%;
             margin-top: .68em;
         }
 
-        border-radius: 10px;
+        border-radius: 5px;
 
     }
 
