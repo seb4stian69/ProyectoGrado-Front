@@ -1,1 +1,7 @@
-<p>testview works!</p>
+<app-hamburger-menu [activeIndex]="2" (openCloseEventEmitter)="toggleMenu()" (goToViewEventEmitter)="goToView($event)"/>
+
+<div class="cardGrid">
+    
+    <app-information-card/>
+
+</div>

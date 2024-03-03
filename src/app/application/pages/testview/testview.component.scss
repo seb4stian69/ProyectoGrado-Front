@@ -1,0 +1,27 @@
+.cardGrid {
+    
+    z-index: 998;
+
+
+    position: absolute;
+    margin-left: 6.5em;
+    margin-right: 2.5em;
+    margin-top: 2em;
+
+    background-color: aqua;
+
+    display: block;
+
+
+    .card {
+        margin-bottom: .5em;
+        margin-right: .2em;
+    }
+
+    &.original {
+        margin-left: 23em;
+    }
+
+    transition: margin-left 0.7s ease;
+
+}
