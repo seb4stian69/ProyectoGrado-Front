@@ -11,7 +11,7 @@ import { SafeHtmlPipe } from '../../../../core/pipes/domsanitizer';
 })
 export class InformationCardComponent{
 
-  @Input() title: string = "Examen:";
-  @Input() description: string = "Razonamiento matematico";
+  @Input() title: string = "???:";
+  @Input() description: string = "???";
 
 }
