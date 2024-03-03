@@ -1,9 +1,9 @@
 // First level importation
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 // Second level importation
+import { HamburgerMenuData } from '../../../../interfaces/application-data/hamburguermenudata';
 // Third level importation
 
 
@@ -16,11 +16,11 @@ import { Router } from '@angular/router';
 })
 export class HamburgerMenuComponent implements OnInit{
 
-  router: Router = inject(Router);
-
   @Output() openCloseEventEmitter = new EventEmitter<boolean>();
+  @Output() goToViewEventEmitter = new EventEmitter<string>();
+  @Input() activeIndex!: number;
 
-  indexListMenu: any[] = [
+  indexListMenu: HamburgerMenuData[] = [
     {
       index: 0,
       tagName: "Menu",
@@ -49,7 +49,6 @@ export class HamburgerMenuComponent implements OnInit{
   ]
 
   imgAssetsPath:string = "../../../../../assets/images";
-  activeIndex: number = -1;
   activeBackgroundColor: string = '#126052';
 
   ngOnInit(): void {
@@ -79,11 +78,9 @@ export class HamburgerMenuComponent implements OnInit{
 
   setActive(index: number): void {
     
-    this.activeIndex = index;
-
     switch(index){
-      case 0: this.router.navigate(['/menu']); break;
-      case 2: this.router.navigate(['/tomakexam/123/321']); break;
+      case 0: this.goToViewEventEmitter.emit('/menu'); break;
+      case 2: this.goToViewEventEmitter.emit('/tomakexam/123/321'); break;
     }
 
   }
