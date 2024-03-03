@@ -1,1 +1,5 @@
-<p>information-card works!</p>
+<div id="card">
+    <p id="title" [innerHTML]="title | safeHtml"></p>
+    <p id="description" [innerHTML]="description | safeHtml"></p>
+    <ng-content></ng-content>
+</div>
