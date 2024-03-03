@@ -1,5 +1,13 @@
-<app-hamburger-menu (openCloseEventEmitter)="toggleMenu()" />
+<app-hamburger-menu [activeIndex]="0" (openCloseEventEmitter)="toggleMenu()" (goToViewEventEmitter)="goToView($event)"/>
 
 <div class="cardGrid">
-    <test-card />
+    
+    @for (infoTest of testCardList; track infoTest.testID) {
+
+        <test-card class="card" [cardData]="infoTest" (gotoTestEventEmitter)="goToTest($event)"/>
+
+    } @empty {
+        <P>No hay test disponibles actualmente!</P>
+    }
+
 </div>
