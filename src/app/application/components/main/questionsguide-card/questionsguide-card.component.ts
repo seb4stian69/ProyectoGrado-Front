@@ -22,7 +22,6 @@ export class QuestionsguideCardComponent {
   toResolved(element:EventTarget | null){
     const pass:HTMLElement = element as HTMLElement;
     pass.classList.toggle('resolved');
-    console.log(pass)
   }
 
 }
