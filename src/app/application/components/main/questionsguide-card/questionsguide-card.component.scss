@@ -1,0 +1,38 @@
+@import "../../../../utils/styles/colors.scss";
+
+div{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    & span{
+        
+        box-sizing: border-box;
+        padding-top: 7px;
+        display: inline-block;
+        border: 1px solid $green;
+        width: 35px;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        color: $green;
+        margin: 6px;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &.resolved{
+            border: 1px solid $green;
+            background-color: $green;
+            color: $white;
+        }
+
+        transition: background-color .4s ease;
+
+    }
+
+}
+

@@ -1,1 +1,5 @@
-<p>questionsguide-card works!</p>
+<div>
+    @for (item of questionsList; track $index) {
+        <span (click)="toResolved($event.target)" >{{item}}</span>
+    }
+</div>
