@@ -3,14 +3,14 @@
 #card {
     position: relative;
     width: 20em;
-    height: 6em;
-    background: #FFFFFF;
+    min-height: 6em;
+    background: $white;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1em; /* Ajusta el relleno según sea necesario */
+    padding: 1em;
 
     p {
 
@@ -21,8 +21,7 @@
         color: $grey;
 
         &:first-of-type {
-            margin-top: .2em;
-            margin-bottom: .5em;
+            margin-top: 15px;
             color: $green;
         }
     }
