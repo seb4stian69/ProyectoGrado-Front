@@ -13,5 +13,6 @@ export class InformationCardComponent{
 
   @Input() title: string = "???:";
   @Input() description: string = "";
+  @Input() showDescription?: boolean = true;
 
 }
