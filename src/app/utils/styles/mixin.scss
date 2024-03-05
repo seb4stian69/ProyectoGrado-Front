@@ -1,0 +1,8 @@
+@mixin addFontData($fontFamily, $fontStyle, $fontWeight, $fontSize, $lineHeight, $color) {
+    font-family: $fontFamily, sans-serif;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $color
+}
