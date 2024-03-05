@@ -86,10 +86,17 @@
         margin-left: 3em;
 
         & .responseSection{
+
             margin-bottom: 1em;
+
             & span{
                 margin-left: 10px;
             }
+
+            & input[type="radio"]{
+                accent-color: #089679;
+            }
+
         }
         
     }
