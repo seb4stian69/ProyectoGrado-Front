@@ -1,21 +1,19 @@
+@import "../../../utils/styles/colors.scss";
+
 .cardGrid {
     
     z-index: 998;
-
 
     position: absolute;
     margin-left: 6.5em;
     margin-right: 2.5em;
     margin-top: 2em;
 
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
 
-    display: block;
-
-
-    .card {
-        margin-bottom: .5em;
-        margin-right: .2em;
+    & .informationComponent{
+        margin-bottom: 2.5em;
     }
 
     &.original {
@@ -23,5 +21,24 @@
     }
 
     transition: margin-left 0.7s ease;
+
+}
+
+.questionFrame {
+
+    position: absolute;
+    margin-left: 28.5em;
+    margin-top: 2em;
+    width: 74.95%;
+    height: 94%;
+    transition: margin-left 0.7s ease, width 0.7s ease; /* Combinación de transiciones */
+    background-color: $white;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    &.original {
+        width: 61.2%;
+        margin-left: 45em;
+    }
 
 }

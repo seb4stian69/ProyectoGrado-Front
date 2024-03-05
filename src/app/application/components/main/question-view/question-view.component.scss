@@ -1,0 +1,97 @@
+@import "../../../../utils/styles/colors.scss";
+@import "../../../../utils/styles/mixin.scss";
+
+@mixin makeButtonSide($urlImg, $positionX) {
+    background-image: url(../../../../../assets/images/#{$urlImg});
+    background-repeat: no-repeat;
+    width: 8em;
+    background-position-y: 2px;
+    background-position-x: $positionX;
+}
+
+.questionData {
+
+    position: relative;
+
+    & .questionGuide {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 2.5em;
+
+        & p{
+            margin-left: 10em;
+            margin-right: 10em;
+            margin-top: .6em;
+            align-items: center;
+            @include addFontData("Inter", normal, 500, 24px, 29px, $green);
+        }
+
+        & button{
+            
+            border: none;
+            background-color: $white;
+            @include addFontData("Inter", normal, 600, 16px, 19px, $grey);
+
+            &:first-child{
+                @include makeButtonSide("LeftArrow.png", left)
+            }
+            &:last-of-type{
+                @include makeButtonSide("RightArrow.png", right)
+            }
+
+        }
+
+    }
+
+    & .questionInfo{
+
+        margin-top: 1.5em;
+        margin-left: 3em;
+        margin-right: 3em;
+
+        & .image{
+            width: 30vh;
+            height: 30vh;
+            display: inline-block;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-right: 60px;
+        }
+
+        & .questionText{
+            display: inline-block;
+            position: absolute;
+            width: 62%;
+        }
+
+    }
+
+    & #divisorLine{
+
+        position: absolute;
+        width: 91.5%;
+        margin-left: 3em;
+        margin-top: 3em;
+
+        border: 1px dashed $grey;
+
+    }
+
+    & .responses {
+
+        margin-top: 6em;
+        margin-left: 3em;
+
+        & .responseSection{
+            margin-bottom: 1em;
+            & span{
+                margin-left: 10px;
+            }
+        }
+        
+    }
+
+}
