@@ -11,13 +11,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './questionsguide-card.component.html',
   styleUrl: './questionsguide-card.component.scss'
 })
-export class QuestionsguideCardComponent {
+export class QuestionsguideCardComponent implements OnInit{
 
-  @Input() numberOfQuestions: number = 30;
-  questionsList = Array.from(
-    { length: this.numberOfQuestions },
-    (_, index) => index + 1
-  );
+  @Input() numberOfQuestions!: number;
+  questionsList!: number[];
+
+  ngOnInit(): void {
+    this.questionsList = Array.from(
+      { length: this.numberOfQuestions },
+      (_, index) => index + 1
+    );
+  }
 
   toResolved(element:EventTarget | null){
     const pass:HTMLElement = element as HTMLElement;
