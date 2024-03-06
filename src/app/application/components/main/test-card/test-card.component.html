@@ -1,0 +1,8 @@
+<div class="testCard">
+    <p class="titleMsg">{{cardData.title}}</p>
+    <img src="{{imgAssetsPath}}/{{cardData.srcImg}}">
+    <div>
+        <p>{{cardData.secondTitle}}</p>
+        <button (click)="goToTest(cardData.testID)"></button>
+    </div>
+</div>

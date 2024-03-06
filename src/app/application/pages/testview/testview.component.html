@@ -1,0 +1,16 @@
+<app-hamburger-menu [activeIndex]="2" (openCloseEventEmitter)="toggleMenu()" (goToViewEventEmitter)="goToView($event)"/>
+
+<div class="cardGrid">
+    
+    <app-information-card class="informationComponent" [title]="'Examen:'" [description]="examDescription"/>
+    <app-information-card class="informationComponent" [title]="'Tiempo restante:'" [description]="remainingDescription"/>
+    
+    <app-information-card class="informationComponent" [title]="'Preguntas:'" [showDescription]="false">
+        <app-questionsguide-card [numberOfQuestions]="30"/>
+    </app-information-card>
+    
+    <app-information-card class="informationComponent" [title]="'Siguiente examen ...'" [description]="nextExamDescription"/>
+    
+</div>
+
+<app-question-view class="questionFrame"/>

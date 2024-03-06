@@ -1,0 +1,27 @@
+<div class="menu-btn" (click)="toggleMenu()">
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+</div>
+
+<nav class="menu">
+
+  <img class="cecarlogo" src="{{imgAssetsPath}}/LogoCecar.png">
+
+  <ul>
+
+    @for (li of indexListMenu; track li.index) {
+
+      <li (click)="setActive(li.index)"
+        [ngStyle]="{'background-color': activeIndex === li.index ? activeBackgroundColor : ''}">
+        <img src="{{imgAssetsPath}}/{{li.imgSrc}}.png">
+        <a>{{li.tagName}}</a>
+      </li>
+
+    } @empty {
+      <li>Empty list of menu data</li>
+    }
+
+  </ul>
+
+</nav>

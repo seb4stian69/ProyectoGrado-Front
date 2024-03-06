@@ -1,0 +1,5 @@
+<div id="card">
+    <p id="title" [innerHTML]="title | safeHtml"></p>
+    @if(showDescription){<p id="description" [innerHTML]="description | safeHtml"></p>}
+    <ng-content id="component"></ng-content>
+</div>
